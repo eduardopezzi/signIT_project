@@ -3,6 +3,7 @@ var EthUtil = require("ethereumjs-util");
 var Web3 = require("web3");
 var web3 = new Web3("HTTP://127.0.0.1:7545");
 const truffleAssert = require("truffle-assertions");
+
 // const keccak256 = require("keccak256");
 
 var BN = web3.utils.BN;
@@ -16,17 +17,17 @@ let numberOfSigners = 2;
 
 contract("SignitDoc", (accounts) => {
   let issuer = accounts[0];
-  let privateKeyIssuer = " PUT HERE PRIVATEKEY1";
+  let privateKeyIssuer = "PUT HERE PRIVATE KEY 1";
 
   let signer = accounts[1];
   // signer address 0x90415E66A753010B7E453F489bBbf23848497936
   // signer private key
-  let privateKey = "PUT HERE PRIVATEKEY2";
+  let privateKey = "PUT HERE PRIVATE KEY 2";
 
   let signer2 = accounts[2];
   // signer address 0x7C0B091F069F575C76F476b97285b203A6D654B2
   // signer private key
-  let privateKey2 = "PUT HERE PRIVATEKEY3";
+  let privateKey2 = "PUT HERE PRIVATE KEY 3";
 
   it("1. SignitDoc should be deployed and store a Document", async () => {
     let Contract = await SignitDoc.deployed();
