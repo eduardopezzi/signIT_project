@@ -1,2 +1,2 @@
-# signIT_projedt
-Blockchain Digital Signature project
+# signIT_project
+Ethereum-based Digital Signature project
