@@ -1,0 +1,49 @@
+{
+  "name": "lesson-04",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.7.1",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.34",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.0.0",
+    "dot-prop": "^5.2.0",
+    "eth-sig-util": "^2.5.3",
+    "ethjs": "^0.4.0",
+    "firebase": "^7.5.0",
+    "fs-extra": "^8.1.0",
+    "ipfs-api": "^26.1.2",
+    "ipfs-http-client": "^42.0.0",
+    "ipfs-only-hash": "^2.0.1",
+    "material-ui-dropzone": "^2.4.7",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "truffle": "^5.1.11",
+    "web3": "^1.2.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {}
+}
