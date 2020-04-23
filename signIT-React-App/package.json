@@ -11,7 +11,7 @@
     "dot-prop": "^5.2.0",
     "eth-sig-util": "^2.5.3",
     "ethjs": "^0.4.0",
-    "firebase": "^7.5.0",
+    "firebase": "^7.14.1",
     "fs-extra": "^8.1.0",
     "ipfs-api": "^26.1.2",
     "ipfs-http-client": "^42.0.0",
@@ -20,7 +20,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^3.4.1",
     "truffle": "^5.1.11",
     "web3": "^1.2.5"
   },
