@@ -16,20 +16,17 @@ let numberOfSigners = 2;
 
 contract("SignitDoc", (accounts) => {
   let issuer = accounts[0];
-  let privateKeyIssuer =
-    "9ea8819710349b9da83a939fb025be28c235f06140e9cdbfce1173b4a1dffedf";
+  let privateKeyIssuer = " PUT HERE PRIVATEKEY1";
 
   let signer = accounts[1];
   // signer address 0x90415E66A753010B7E453F489bBbf23848497936
   // signer private key
-  let privateKey =
-    "025a29fca2e5aba9edc0d1057478a7740e5857650605f53738363e879e0bc81f";
+  let privateKey = "PUT HERE PRIVATEKEY2";
 
   let signer2 = accounts[2];
   // signer address 0x7C0B091F069F575C76F476b97285b203A6D654B2
   // signer private key
-  let privateKey2 =
-    "191c11c6ea292cebbe10491e75876d977e0e02cb70e8c8b25f4d12ff07f98ed0";
+  let privateKey2 = "PUT HERE PRIVATEKEY3";
 
   it("1. SignitDoc should be deployed and store a Document", async () => {
     let Contract = await SignitDoc.deployed();
