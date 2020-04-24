@@ -27,6 +27,7 @@ Version 2.3.0-beta
 
 Metamask 7.7.8
 
+[IPFS](https://ipfs.io/)
 
 ### Tests
 
@@ -53,6 +54,7 @@ Also you will find a React Web Interface to this application at the signIT-React
 npm install
 npm start
 ```
+Also, if you want use IPFS decentrilized file system, it is necessary to install and run the server.
 To test this application you must have Metamask installed and setup a custom RPC to connect to your ganache project. Once everything setup, you can start using the app.
 First upload a document, second store the document (it will store the document information in the blockchain and the file in the IPFS network. Third, you can sign it and afterr that verify if the signature matches with signer's wallet and retrive who has signed the Document.
 
