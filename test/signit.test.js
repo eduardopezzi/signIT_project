@@ -1,33 +1,39 @@
 const SignitDoc = artifacts.require("SignitDoc");
-var EthUtil = require("ethereumjs-util");
-var Web3 = require("web3");
-var web3 = new Web3("HTTP://127.0.0.1:7545");
+const EthUtil = require("ethereumjs-util");
+const Web3 = require("web3");
+const web3 = new Web3("HTTP://127.0.0.1:7545");
 const truffleAssert = require("truffle-assertions");
+const hdkey = require("ethereumjs-wallet/hdkey");
+const wallet = require("ethereumjs-wallet");
+const bip39 = require("bip39");
 
-// const keccak256 = require("keccak256");
+// create accounts from your mnemonics at .secret file
+function getPrivKey(account) {
+  const fs = require("fs");
+  const mnemonic = fs.readFileSync("./.secret").toString().trim();
+  const seed = bip39.mnemonicToSeedSync(mnemonic); // mnemonic is the string containing the words
+  const hdk = hdkey.fromMasterSeed(seed);
+  const addr_node = hdk.derivePath(`m/44'/60'/0'/0/${account}`);
+  const addr = addr_node.getWallet().getAddressString(); //check that this is the same with the address that ganache list for the first account to make sure the derivation is correct
+  const private_key = addr_node.getWallet().getPrivateKey();
+  return private_key.toString("hex");
+}
 
-var BN = web3.utils.BN;
+const BN = web3.utils.BN;
 
+// image hash test from IPFS
 let IPFSaddress = "QmWwJW3CKoHsnUJYYD6CbSwjapkjhzJusexvTpBEtC5bo1";
-// let docHash = keccak256(IPFSaddress).toString("hex");
-// docHash = "0x" + docHash;
 let docHash = web3.utils.keccak256(IPFSaddress);
 
 let numberOfSigners = 2;
 
 contract("SignitDoc", (accounts) => {
   let issuer = accounts[0];
-  let privateKeyIssuer = "PUT HERE PRIVATE KEY 1";
-
+  let privateKeyIssuer = getPrivKey(0);
   let signer = accounts[1];
-  // signer address 0x90415E66A753010B7E453F489bBbf23848497936
-  // signer private key
-  let privateKey = "PUT HERE PRIVATE KEY 2";
-
+  let privateKey = getPrivKey(1);
   let signer2 = accounts[2];
-  // signer address 0x7C0B091F069F575C76F476b97285b203A6D654B2
-  // signer private key
-  let privateKey2 = "PUT HERE PRIVATE KEY 3";
+  let privateKey2 = getPrivKey(2);
 
   it("1. SignitDoc should be deployed and store a Document", async () => {
     let Contract = await SignitDoc.deployed();
